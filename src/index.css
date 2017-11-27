@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.w-webflow-badge{
+    display: none !important;
+}
+.w-slider-dot,
+.w-slider-arrow-left,
+.w-slider-arrow-right {
+    display: none;
+}
+
+#SliderInSliderNav .w-slider-dot{
+    display: inline-block;
+}
+
+#countdown {
+    font-family: Lato, sans-serif;
+    color: #1b92ff;
+    font-size: 10vw;
+    font-weight: 400;
+
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    text-align: center;
+    margin-top: 16vh;
+}
