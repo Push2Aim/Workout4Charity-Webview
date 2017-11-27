@@ -45,20 +45,19 @@ function share(message) {
             "attachment": {
                 "type": "template",
                 "payload": {
-                    "template_type": "generic",
+                    "template_type": "media",
                     "elements": [{
-                        "title": "I took Peter's 'Which Hat Are You?' Quiz",
-                        "image_url": "https://bot.peters-hats.com/img/hats/fez.jpg",
-                        "subtitle": "My result: Fez",
-                        "default_action": {
-                            "type": "web_url",
-                            "url": "https://bot.peters-hats.com/view_quiz_results.php?user=24601"
-                        },
-                        "buttons": [{
-                            "type": "web_url",
-                            "url": "https://bot.peters-hats.com/hatquiz.php?referer=24601",
-                            "title": "Take the Quiz"
-                        }]
+                        "media_type": "image",
+                        "url": "https://millenniumchild.org/wp-content/uploads/2016/08/p.jpg",
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "url": "https://workout4charity.herokuapp.com/",
+                                "title": "Mehr Lesen",
+                                "webview_height_ratio": "full",
+                                "messenger_extensions": true,
+                            }
+                        ]
                     }]
                 }
             }
