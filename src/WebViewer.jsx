@@ -30,7 +30,7 @@ class WebViewer extends Component {
                         'Content-Type': 'application/json'
                     },
                     credentials: 'same-origin', // By default, fetch won't send any cookies to the server
-                    body: JSON.stringify({userID: userID})
+                    body: JSON.stringify({userID: userID||0})
                 })
             )
     }
