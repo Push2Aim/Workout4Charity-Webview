@@ -42,26 +42,26 @@ function getUserID() {
 
 function share(message) {
     message = message || {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "media",
-                    "elements": [{
-                        "media_type": "image",
-                        "url": "https://millenniumchild.org/wp-content/uploads/2016/08/p.jpg",
-                        "buttons": [
-                            {
-                                "type": "web_url",
-                                "url": "https://workout4charity.herokuapp.com/",
-                                "title": "Mehr Lesen",
-                                "webview_height_ratio": "full",
-                                "messenger_extensions": true,
-                            }
-                        ]
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "Das ist Suleyman",
+                    "image_url": "https://millenniumchild.org/wp-content/uploads/2016/08/p.jpg",
+                    "default_action": {
+                        "type": "web_url",
+                        "url": "https://workout4charity.herokuapp.com/"
+                    },
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://workout4charity.herokuapp.com/",
+                        "title": "Mehr Lesen"
                     }]
-                }
+                }]
             }
-        };
+        }
+    };
     return doneLoading().then(extension => {
         return extension.beginShareFlow(() => {
                 // Share successful
