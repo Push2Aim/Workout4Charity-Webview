@@ -10,7 +10,6 @@ class WebViewer extends Component {
     }
 
     render() {
-        this.updateSliderIndex();
         return (
             <div>
                 TEST {this.props.location}  {this.props.duration}
