@@ -11,14 +11,16 @@ class WebViewer extends Component {
 
     render() {
         return (
-            <div onClick={this.postRequest.bind(this)}>
+            <div>
                 TEST {this.props.location} {this.props.duration}
+                <div onClick={this.postRequest.bind(this)}>postRequest()</div>
+                <div onClick={this.share.bind(this)}>share()</div>
             </div>
         );
     }
 
     postRequest() {
-        console.log("postRequest(name)");
+        console.log("postRequest()");
         return MessengerExtensions.getUserID()
             .then(userID =>
                 fetch('/event', {
@@ -31,6 +33,10 @@ class WebViewer extends Component {
                     body: JSON.stringify({userID: userID})
                 })
             )
+    }
+    share() {
+        console.log("share()");
+        return MessengerExtensions.share();
     }
 }
 
