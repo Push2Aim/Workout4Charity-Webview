@@ -1,8 +1,8 @@
 {
-  "name": "react_webview",
+  "name": "workout4charity-webview",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://push2aim.github.io/",
+  "homepage": "https://workout4charity.herokuapp.com",
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
