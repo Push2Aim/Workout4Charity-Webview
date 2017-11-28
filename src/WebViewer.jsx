@@ -17,19 +17,20 @@ class WebViewer extends Component {
                     <div className="w-slider-mask">
                         <div className="w-slide" >
                             <div className="titletext"><h2 className="author">Mark Manson</h2>
-                                <h1 className="articletitle">Es ist traurig</h1></div>
+                                <h1 className="articletitle">Chaos bei Rettung</h1></div>
                             <div className="titleimage"></div>
                         </div>
                         <div className="slide w-slide" >
                             <div className="articletext">
-                                <div className="articletext_first_letter">S</div>
-                                <p className="articletext_first_paragraph">uleyman ipsum dolor sit amet.Consectetur adipiscing elit.Suspendisse
-                                    varius enim.</p>
-                                <div className="articletext_body">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                                <div className="articletext_first_letter">F</div>
+                                <p className="articletext_first_paragraph">ünf Migranten sind während einer Rettung im
+                                    Mittelmeer ertrunken.</p>
+                                <div className="articletext_body">Die Nothilfeorganisation Sea Watch, die mit Rettungsbooten
+                                    schiffbrüchige Migranten im Mittelmeer birgt, erhob gegen die libysche Küstenwache
+                                    schwere Vorwürfe. Demnach habe während der laufenden Rettung ein heranpreschendes
+                                    libysches Patrouillenboot &quot;Angst und Panik&quot; unter den Migranten ausgelöst.
+                                    An Bord des Schiffs der Küstenwache seien Menschen bedroht und geschlagen worden.
+                                    Darum seien bereits Gerettete zurück ins Wasser gesprungen und ertrunken.
                                 </div>
                             </div>
                         </div>
