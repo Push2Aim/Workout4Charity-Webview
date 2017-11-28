@@ -30,7 +30,7 @@ class WebViewer extends Component {
                                     schwere Vorwürfe. Demnach habe während der laufenden Rettung ein heranpreschendes
                                     libysches Patrouillenboot &quot;Angst und Panik&quot; unter den Migranten ausgelöst.
                                     An Bord des Schiffs der Küstenwache seien Menschen bedroht und geschlagen worden.
-                                    Darum seien bereits Gerettete zurück ins Wasser gesprungen und ertrunken.
+                                    Darum seien bereits Gerettete zurück ins Wasser gesprungen und ertrunken. Hilf jetzt!
                                 </div>
                             </div>
                         </div>
