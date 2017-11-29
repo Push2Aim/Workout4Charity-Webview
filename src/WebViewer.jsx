@@ -32,12 +32,12 @@ class WebViewer extends Component {
                         <div className="w-form">
                             <form id="email-form" name="email-form" data-name="Email Form">
                                 <input type="text"
-                                                                                                  className="copy_invite_link laufziel team w-input"
-                                                                                                  maxlength="256" name="name"
-                                                                                                  data-name="Name"
-                                                                                                  placeholder="Nike Run Laufziel eingeben"
-                                                                                                  id="name"
-                                                                                                  style={{backgroundColor: "rgb(255, 51, 0)"}}/>
+                                      className="copy_invite_link laufziel team w-input"
+                                      maxlength="256" name="name"
+                                      data-name="Name"
+                                      placeholder="Nike Run Laufziel eingeben"
+                                      id="name"
+                                      style={{backgroundColor: "rgb(255, 51, 0)"}}/>
                                     <input
                                 type="submit" value="Submit" data-wait="Please wait..."
                                 className="copy_invite_link submitlaufziel team w-button" style={{backgroundColor: "rgb(255, 51, 0)"}}/>
