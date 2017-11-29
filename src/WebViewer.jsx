@@ -8,7 +8,7 @@ class WebViewer extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            team: []
+            team: props.ref || []
         }
     }
 
@@ -20,7 +20,7 @@ class WebViewer extends Component {
                         <ul className="namelist">
                             {this.state.team.map(this.buildList)}
                         </ul>
-                        <CopyToClipboard text="https://m.me/129740594364020/?ref=myparam">
+                        <CopyToClipboard text={"https://m.me/129740594364020/?ref="+JSON.stringify(this.state.team)}>
                         <a className="copy_invite_link team w-button"
                            data-ix="copy-invite-linkappear-3" style={{backgroundColor: "rgb(255, 51, 0)"}}>Einladung kopieren</a>
                         </CopyToClipboard>
@@ -111,6 +111,7 @@ class WebViewer extends Component {
     }
 
     postToServer(userID) {
+        const self = this;
         return fetch('/event', {
             method: 'post',
             headers: {
@@ -119,7 +120,14 @@ class WebViewer extends Component {
             },
             credentials: 'same-origin', // By default, fetch won't send any cookies to the server
             body: JSON.stringify({userID: userID})
-        })
+            })
+            .then(res => {
+                let {first_name,last_name} = res.userInfo;
+                self.setState((prevState, props) => ({
+                    team: prevState.team.push(first_name + " " + last_name)
+                }));
+            })
+
     }
 
     buildList(name) {
