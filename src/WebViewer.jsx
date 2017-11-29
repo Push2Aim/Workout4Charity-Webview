@@ -30,12 +30,13 @@ class WebViewer extends Component {
                 <div className="articletext"><h3 className="ctatext_header">So kannst du helfen!</h3>
                     <p className="bold ctatext_body">Am nächsten Dienstag ist ein Spendenlauf von Nike.</p>
                     <p className="ctatext_body italic">7. Dezember, München, Marienplatz.</p>
-                    <p className="ctatext_body">Renn um Flüchtlingen zu helfen!</p><a href="http://workout4charity-webview.webflow.io/#"
-                                                                                  className="button w-button">Teilnehmen</a>
+                    <p className="ctatext_body">Renn um Flüchtlingen zu helfen!</p>
+                    <a onClick={this.askPermission.bind(this)} className="button w-button">Teilnehmen</a>
                     <div className="bottommenu placeholder"></div>
                 </div>
-                <div className="bottommenu w-container"><a href="http://workout4charity-webview.webflow.io/#" className="sendbutton w-button">Senden
-                    an</a><a href="http://workout4charity-webview.webflow.io/#" className="teambutton w-button"></a></div>
+                <div className="bottommenu w-container">
+                    <a onClick={this.share.bind(this)} className="sendbutton w-button">Senden an</a>
+                    <a  className="teambutton w-button"></a></div>
             </div>
         );
     }
@@ -61,7 +62,7 @@ class WebViewer extends Component {
     }
 
     askPermission() {
-        console.log("share()");
+        console.log("askPermission()");
         return MessengerExtensions.askPermission("user_profile").then(
             perms => MessengerExtensions.getUserID()
         );
