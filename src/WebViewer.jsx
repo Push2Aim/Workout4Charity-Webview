@@ -7,7 +7,9 @@ class WebViewer extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = {}
+        this.state = {
+            team: []
+        }
     }
 
     render() {
@@ -16,10 +18,7 @@ class WebViewer extends Component {
                 <div className="teamcontainer w-container"><h1 className="articletitle teamtitle">Team Profil</h1>
                     <div className="teamtext"><h2 className="ctatext_header">Dein Team</h2>
                         <ul className="namelist">
-                            <li className="teamname">Yves Strack</li>
-                            <li className="teamname">Timo Morawitz</li>
-                            <li className="teamname">Vanessa Herfeldt</li>
-                            <li className="teamname">Johannes Eisenlohr</li>
+                            {this.state.team.map(this.buildList)}
                         </ul>
                         <CopyToClipboard text="https://m.me/129740594364020/?ref=myparam">
                         <a className="copy_invite_link team w-button"
@@ -121,6 +120,10 @@ class WebViewer extends Component {
             credentials: 'same-origin', // By default, fetch won't send any cookies to the server
             body: JSON.stringify({userID: userID})
         })
+    }
+
+    buildList(name) {
+        return <li className="teamname">{name}</li>
     }
 }
 
