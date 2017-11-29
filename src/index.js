@@ -4,7 +4,7 @@ import WebViewer from "./WebViewer";
 import "./index.css";
 
 ReactDOM.render(
-    <WebViewer ref={getValue("ref")}/>,
+    <WebViewer team={getValue("ref")}/>,
   document.getElementById('root')
 );
 

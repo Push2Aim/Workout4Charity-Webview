@@ -8,7 +8,7 @@ class WebViewer extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            team: props.ref || []
+            team: props.team || []
         }
     }
 
@@ -27,14 +27,14 @@ class WebViewer extends Component {
                             <a
                              className="copy_invite_link_clicked w-button">Einladung
                             kopiert</a>
-                        <h2 className="ctatext_header laufzieltitle">Dein Team</h2>
+                        <h2 className="ctatext_header laufzieltitle">Euer Laufziel</h2>
                         <div className="w-form">
                             <form id="email-form" name="email-form" data-name="Email Form">
                                 <input type="text"
                                                                                                   className="copy_invite_link laufziel team w-input"
                                                                                                   maxlength="256" name="name"
                                                                                                   data-name="Name"
-                                                                                                  placeholder="Laufziel eingeben"
+                                                                                                  placeholder="Nike Run Laufziel eingeben"
                                                                                                   id="name"
                                                                                                   style={{backgroundColor: "rgb(255, 51, 0)"}}/>
                                     <input
