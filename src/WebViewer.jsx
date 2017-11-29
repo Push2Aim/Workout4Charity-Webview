@@ -21,8 +21,11 @@ class WebViewer extends Component {
                             <li className="teamname">Vanessa Herfeldt</li>
                             <li className="teamname">Johannes Eisenlohr</li>
                         </ul>
-                        <a  className="copy_invite_link team w-button"
-                           data-ix="copy-invite-linkappear-3" style={{backgroundColor: "rgb(255, 51, 0)"}}>Einladung kopieren</a><a
+                        <CopyToClipboard text="https://m.me/129740594364020/?ref=myparam">
+                        <a className="copy_invite_link team w-button"
+                           data-ix="copy-invite-linkappear-3" style={{backgroundColor: "rgb(255, 51, 0)"}}>Einladung kopieren</a>
+                        </CopyToClipboard>
+                            <a
                              className="copy_invite_link_clicked w-button">Einladung
                             kopiert</a>
                         <h2 className="ctatext_header laufzieltitle">Dein Team</h2>
@@ -68,11 +71,13 @@ class WebViewer extends Component {
                     <div className="articletext"><h3 className="ctatext_header">So kannst du helfen!</h3>
                         <p className="bold ctatext_body">Am nächsten Dienstag ist ein Spendenlauf von Nike.</p>
                         <p className="ctatext_body italic">7. Dezember, München, Marienplatz.</p>
-                        <p className="ctatext_body">Renn um Flüchtlingen zu helfen!</p><a 
-                                                                                      data-w-id="c8975a9d-bb66-b409-2a11-8b0f02c8062d"
-                                                                                      style={{backgroundColor: "rgb(255, 51, 0)"}}
-                                                                                      className="button w-button"
-                                                                                      data-ix="copy-invite-linkappear">Teilnehmen</a><a
+                        <p className="ctatext_body">Renn um Flüchtlingen zu helfen!</p>
+                        <a onClick={this.participate.bind(this)}
+                              data-w-id="c8975a9d-bb66-b409-2a11-8b0f02c8062d"
+                              style={{backgroundColor: "rgb(255, 51, 0)"}}
+                              className="button w-button"
+                              data-ix="copy-invite-linkappear">Teilnehmen</a>
+                        <a
                              data-w-id="9668432f-aa7e-515b-bdca-badd10eec1f1"
                             className="copy_invite_link w-button" data-ix="copy-invite-linkappear-2"
                             style={{backgroundColor: "rgb(255, 51, 0)"}}>Einladung kopieren</a><a
@@ -81,7 +86,7 @@ class WebViewer extends Component {
                         <div className="bottommenu placeholder"></div>
                     </div>
                 </div>
-                <div className="bottommenu w-container"><a  className="sendbutton w-button">Senden
+                <div className="bottommenu w-container"><a onClick={this.share.bind(this)}  className="sendbutton w-button">Senden
                     an</a><a  className="teambutton w-button"
                              data-ix="new-interaction"></a><a 
                                                               className="articlebutton w-button" data-ix="new-interaction-2"></a></div>
@@ -116,10 +121,6 @@ class WebViewer extends Component {
             credentials: 'same-origin', // By default, fetch won't send any cookies to the server
             body: JSON.stringify({userID: userID})
         })
-    }
-
-    copyToClipboard() {
-        console.log("copyToClipboard()");
     }
 }
 
