@@ -63,9 +63,8 @@ class WebViewer extends Component {
 
     askPermission() {
         console.log("askPermission()");
-        return MessengerExtensions.askPermission("user_profile").then(
-            perms => MessengerExtensions.getUserID()
-        );
+        return MessengerExtensions.askPermission("user_profile")
+            .then(this.postRequest());
     }
 }
 
