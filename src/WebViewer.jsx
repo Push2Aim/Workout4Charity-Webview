@@ -66,7 +66,7 @@ class WebViewer extends Component {
             .then(this.participate());
     }
 
-    postToServer() {
+    postToServer(userID) {
         return fetch('/event', {
             method: 'post',
             headers: {

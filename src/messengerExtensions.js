@@ -36,7 +36,7 @@ function getUserID(callback) {
             // User ID was successfully obtained.
             alert(uids.psid);
 
-            callback;
+            callback(uids.psid);
 
             return uids.psid;
         }, (err, errorMessage) => {
