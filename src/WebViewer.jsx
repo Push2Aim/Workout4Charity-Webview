@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./webflow.css";
 import MessengerExtensions from "./messengerExtensions";
+import {CopyToClipboard} from "react-copy-to-clipboard";
 
 class WebViewer extends Component {
 
@@ -12,6 +13,7 @@ class WebViewer extends Component {
     render() {
         return (
             <div>
+                <CopyToClipboard text="Hello, world!"><a className="sendbutton w-button">Copy</a></CopyToClipboard>
                 <div className="titletext"><h2 className="author">Mark Manson</h2>
                     <h1 className="articletitle">Chaos bei Rettung</h1></div>
                 <div className="titleimage"></div>
@@ -41,7 +43,7 @@ class WebViewer extends Component {
                 </div>
                 <div className="bottommenu w-container">
                     <a onClick={this.share.bind(this)} className="sendbutton w-button">Senden an</a>
-                    <a className="teambutton w-button"></a></div>
+                    <a onClick={this.copyToClipboard.bind(this)} className="teambutton w-button"></a></div>
             </div>
         );
     }
@@ -72,6 +74,10 @@ class WebViewer extends Component {
             credentials: 'same-origin', // By default, fetch won't send any cookies to the server
             body: JSON.stringify({userID: userID})
         })
+    }
+
+    copyToClipboard() {
+        console.log("copyToClipboard()");
     }
 }
 
