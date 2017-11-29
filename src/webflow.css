@@ -1,4 +1,4 @@
-/* Generated on: Wed Nov 29 2017 20:18:07 GMT+0000 (UTC) */
+/* Generated on: Wed Nov 29 2017 23:03:01 GMT+0000 (UTC) */
 /* ==========================================================================
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
    ========================================================================== */
@@ -70,29 +70,6 @@
         color: #fff;
         text-align: left;
     }
-    .navigation {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        width: 12.5vw;
-        height: 12.5vw;
-        margin-right: 2vw;
-        margin-left: 2vw;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        border: 1px solid #0084ff;
-        border-radius: 4px;
-        background-image: -webkit-linear-gradient(270deg, #fff, #fff);
-        background-image: linear-gradient(180deg, #fff, #fff);
-        color: #0084ff;
-    }
     .teambutton {
         display: -webkit-box;
         display: -webkit-flex;
@@ -118,10 +95,6 @@
         background-repeat: no-repeat, repeat;
         color: #fff;
     }
-    .image {
-        width: 100vw;
-        height: 90vh;
-    }
     .titleimage {
         width: 100vw;
         height: 95vh;
@@ -145,9 +118,6 @@
         padding-left: 5vw;
         color: #0084ff;
         font-size: 4em;
-    }
-    .div-block {
-        position: fixed;
     }
     .author {
         font-family: Vollkorn, serif;
@@ -181,23 +151,6 @@
         -ms-flex-align: start;
         align-items: flex-start;
     }
-    .slider {
-        width: 100vw;
-        height: 95vh;
-    }
-    .slide-nav {
-        display: none;
-    }
-    .right-arrow {
-        display: none;
-    }
-    .left-arrow {
-        display: none;
-    }
-    .slide {
-        background-image: -webkit-linear-gradient(270deg, #f5f5f5, #f5f5f5);
-        background-image: linear-gradient(180deg, #f5f5f5, #f5f5f5);
-    }
     .articletext_body {
         font-family: Vollkorn, serif;
         font-size: 16px;
@@ -213,13 +166,6 @@
     }
     .articletext {
         padding: 3vh 5vw;
-    }
-    .articletext.cover_pic_slide {
-        padding-top: 35vh;
-    }
-    .paragraph {
-        font-family: 'Times New Roman', TimesNewRoman, Times, Baskerville, Georgia, serif;
-        font-size: 16px;
     }
     .articletext_first_paragraph {
         padding-left: 72px;
@@ -393,76 +339,5 @@
     .teamtext {
         width: 100vw;
         padding: 2vh 5vw;
-    }
-    .heading {
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-        padding-left: 5vw;
-    }
-    .dropdown {
-        width: 90vw;
-        height: 12.5vw;
-        margin-top: 2vh;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        border-radius: 4px;
-        background-image: -webkit-linear-gradient(270deg, #0084ff, #0084ff);
-        background-image: linear-gradient(180deg, #0084ff, #0084ff);
-        box-shadow: 0 4px 6px 0 rgba(0, 132, 255, .33);
-    }
-    .text-block {
-        font-size: 16px;
-    }
-    .dropdown-toggle {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        height: 12.5vw;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        color: #fff;
-    }
-    .dropdown-list {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-    .dropdownlink {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        background-image: -webkit-linear-gradient(270deg, #fff, #fff);
-        background-image: linear-gradient(180deg, #fff, #fff);
     }
 }
