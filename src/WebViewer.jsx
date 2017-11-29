@@ -13,37 +13,79 @@ class WebViewer extends Component {
     render() {
         return (
             <div>
-                <CopyToClipboard text="Hello, world!"><a className="sendbutton w-button">Copy</a></CopyToClipboard>
-                <div className="titletext"><h2 className="author">Mark Manson</h2>
-                    <h1 className="articletitle">Chaos bei Rettung</h1></div>
-                <div className="titleimage"></div>
-                <div className="articletext">
-                    <div className="articletext_first_letter">F</div>
-                    <p className="articletext_first_paragraph">ünf Migranten sind während einer Rettung im Mittelmeer
-                        ertrunken. Das ist
-                        ihre Geschichte.</p>
-                    <div className="articletext_body">Die Nothilfeorganisation Sea Watch, die mit Rettungsbooten
-                        schiffbrüchige Migranten im
-                        Mittelmeer birgt, erhob gegen die libysche Küstenwache schwere Vorwürfe. Demnach habe während
-                        der laufenden
-                        Rettung ein heranpreschendes libysches Patrouillenboot "Angst und Panik" unter den Migranten
-                        ausgelöst.&nbsp;An
-                        Bord des Schiffs der Küstenwache seien Menschen bedroht und geschlagen worden. Darum seien
-                        bereits Gerettete
-                        zurück ins Wasser gesprungen und ertrunken.
+                <div className="teamcontainer w-container"><h1 className="articletitle teamtitle">Team Profil</h1>
+                    <div className="teamtext"><h2 className="ctatext_header">Dein Team</h2>
+                        <ul className="namelist">
+                            <li className="teamname">Yves Strack</li>
+                            <li className="teamname">Timo Morawitz</li>
+                            <li className="teamname">Vanessa Herfeldt</li>
+                            <li className="teamname">Johannes Eisenlohr</li>
+                        </ul>
+                        <a  className="copy_invite_link team w-button"
+                           data-ix="copy-invite-linkappear-3" style={{backgroundColor: "rgb(255, 51, 0)"}}>Einladung kopieren</a><a
+                             className="copy_invite_link_clicked w-button">Einladung
+                            kopiert</a>
+                        <h2 className="ctatext_header laufzieltitle">Dein Team</h2>
+                        <div className="w-form">
+                            <form id="email-form" name="email-form" data-name="Email Form">
+                                <input type="text"
+                                                                                                  className="copy_invite_link laufziel team w-input"
+                                                                                                  maxlength="256" name="name"
+                                                                                                  data-name="Name"
+                                                                                                  placeholder="Laufziel eingeben"
+                                                                                                  id="name"
+                                                                                                  style={{backgroundColor: "rgb(255, 51, 0)"}}/>
+                                    <input
+                                type="submit" value="Submit" data-wait="Please wait..."
+                                className="copy_invite_link submitlaufziel team w-button" style={{backgroundColor: "rgb(255, 51, 0)"}}/>
+
+                            </form>
+                            <div className="w-form-done">
+                                <div>Thank you! Your submission has been received!</div>
+                            </div>
+                            <div className="w-form-fail">
+                                <div>Oops! Something went wrong while submitting the form.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="coverpic"></div>
-                <div className="articletext"><h3 className="ctatext_header">So kannst du helfen!</h3>
-                    <p className="bold ctatext_body">Am nächsten Dienstag ist ein Spendenlauf von Nike.</p>
-                    <p className="ctatext_body italic">7. Dezember, München, Marienplatz.</p>
-                    <p className="ctatext_body">Renn um Flüchtlingen zu helfen!</p>
-                    <a onClick={this.askPermission.bind(this)} className="button w-button">Teilnehmen</a>
-                    <div className="bottommenu placeholder"></div>
+                <div className="articlecontainer w-container">
+                    <div className="titletext"><h2 className="author">Mark Manson</h2>
+                        <h1 className="articletitle">Chaos bei Rettung</h1></div>
+                    <div className="titleimage"></div>
+                    <div className="articletext">
+                        <div className="articletext_first_letter">F</div>
+                        <p className="articletext_first_paragraph">ünf Migranten sind während einer Rettung im Mittelmeer ertrunken. Das ist
+                            ihre Geschichte.</p>
+                        <div className="articletext_body">Die Nothilfeorganisation Sea Watch, die mit Rettungsbooten schiffbrüchige
+                            Migranten im Mittelmeer birgt, erhob gegen die libysche Küstenwache schwere Vorwürfe. Demnach habe während
+                            der laufenden Rettung ein heranpreschendes libysches Patrouillenboot "Angst und Panik" unter den Migranten
+                            ausgelöst.&nbsp;An Bord des Schiffs der Küstenwache seien Menschen bedroht und geschlagen worden. Darum
+                            seien bereits Gerettete zurück ins Wasser gesprungen und ertrunken.
+                        </div>
+                    </div>
+                    <div className="coverpic"></div>
+                    <div className="articletext"><h3 className="ctatext_header">So kannst du helfen!</h3>
+                        <p className="bold ctatext_body">Am nächsten Dienstag ist ein Spendenlauf von Nike.</p>
+                        <p className="ctatext_body italic">7. Dezember, München, Marienplatz.</p>
+                        <p className="ctatext_body">Renn um Flüchtlingen zu helfen!</p><a 
+                                                                                      data-w-id="c8975a9d-bb66-b409-2a11-8b0f02c8062d"
+                                                                                      style={{backgroundColor: "rgb(255, 51, 0)"}}
+                                                                                      className="button w-button"
+                                                                                      data-ix="copy-invite-linkappear">Teilnehmen</a><a
+                             data-w-id="9668432f-aa7e-515b-bdca-badd10eec1f1"
+                            className="copy_invite_link w-button" data-ix="copy-invite-linkappear-2"
+                            style={{backgroundColor: "rgb(255, 51, 0)"}}>Einladung kopieren</a><a
+                             className="copy_invite_link_clicked w-button">Einladung
+                            kopiert</a>
+                        <div className="bottommenu placeholder"></div>
+                    </div>
                 </div>
-                <div className="bottommenu w-container">
-                    <a onClick={this.share.bind(this)} className="sendbutton w-button">Senden an</a>
-                    <a onClick={this.copyToClipboard.bind(this)} className="teambutton w-button"></a></div>
+                <div className="bottommenu w-container"><a  className="sendbutton w-button">Senden
+                    an</a><a  className="teambutton w-button"
+                             data-ix="new-interaction"></a><a 
+                                                              className="articlebutton w-button" data-ix="new-interaction-2"></a></div>
+
             </div>
         );
     }
