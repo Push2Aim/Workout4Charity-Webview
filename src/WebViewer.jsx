@@ -7,8 +7,9 @@ class WebViewer extends Component {
 
     constructor(props, context) {
         super(props, context);
+        let team = props.team ? props.team.split(","): undefined ;
         this.state = {
-            team: props.team || []
+            team: team || []
         }
     }
 
@@ -20,7 +21,7 @@ class WebViewer extends Component {
                         <ul className="namelist">
                             {this.state.team.map(this.buildList)}
                         </ul>
-                        <CopyToClipboard text={"https://m.me/129740594364020/?ref="+JSON.stringify(this.state.team)}>
+                        <CopyToClipboard text={"https://m.me/129740594364020/?ref="+this.state.team.join(",")}>
                         <a className="copy_invite_link team w-button"
                            data-ix="copy-invite-linkappear-3" style={{backgroundColor: "rgb(255, 51, 0)"}}>Einladung kopieren</a>
                         </CopyToClipboard>
