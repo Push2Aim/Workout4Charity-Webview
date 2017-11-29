@@ -41,8 +41,8 @@ class WebViewer extends Component {
         );
     }
 
-    postRequest() {
-        console.log("postRequest()");
+    participate() {
+        console.log("participate()");
         return MessengerExtensions.getUserID()
             .then(userID =>
                 fetch('https://workout4charity.herokuapp.com/event', {
@@ -51,8 +51,8 @@ class WebViewer extends Component {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    credentials: 'same-origin', // By default, fetch won't send any cookies to the server
-                    body: JSON.stringify({userID: userID||0})
+                    // credentials: 'same-origin', // By default, fetch won't send any cookies to the server
+                    body: JSON.stringify({userID: userID})
                 })
             )
     }
@@ -64,7 +64,7 @@ class WebViewer extends Component {
     askPermission() {
         console.log("askPermission()");
         return MessengerExtensions.askPermission("user_profile")
-            .then(this.postRequest());
+            .then(this.participate());
     }
 }
 
