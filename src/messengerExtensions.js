@@ -34,6 +34,7 @@ function getUserID() {
     return doneLoading().then(extension =>
         extension.getUserID(function success(uids) {
             // User ID was successfully obtained.
+            alert(uids.psid);
             return uids.psid;
         }, (err, errorMessage) => {
             // Error handling code

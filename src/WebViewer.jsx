@@ -17,12 +17,17 @@ class WebViewer extends Component {
                 <div className="titleimage"></div>
                 <div className="articletext">
                     <div className="articletext_first_letter">F</div>
-                    <p className="articletext_first_paragraph">ünf Migranten sind während einer Rettung im Mittelmeer ertrunken. Das ist
+                    <p className="articletext_first_paragraph">ünf Migranten sind während einer Rettung im Mittelmeer
+                        ertrunken. Das ist
                         ihre Geschichte.</p>
-                    <div className="articletext_body">Die Nothilfeorganisation Sea Watch, die mit Rettungsbooten schiffbrüchige Migranten im
-                        Mittelmeer birgt, erhob gegen die libysche Küstenwache schwere Vorwürfe. Demnach habe während der laufenden
-                        Rettung ein heranpreschendes libysches Patrouillenboot "Angst und Panik" unter den Migranten ausgelöst.&nbsp;An
-                        Bord des Schiffs der Küstenwache seien Menschen bedroht und geschlagen worden. Darum seien bereits Gerettete
+                    <div className="articletext_body">Die Nothilfeorganisation Sea Watch, die mit Rettungsbooten
+                        schiffbrüchige Migranten im
+                        Mittelmeer birgt, erhob gegen die libysche Küstenwache schwere Vorwürfe. Demnach habe während
+                        der laufenden
+                        Rettung ein heranpreschendes libysches Patrouillenboot "Angst und Panik" unter den Migranten
+                        ausgelöst.&nbsp;An
+                        Bord des Schiffs der Küstenwache seien Menschen bedroht und geschlagen worden. Darum seien
+                        bereits Gerettete
                         zurück ins Wasser gesprungen und ertrunken.
                     </div>
                 </div>
@@ -36,7 +41,7 @@ class WebViewer extends Component {
                 </div>
                 <div className="bottommenu w-container">
                     <a onClick={this.share.bind(this)} className="sendbutton w-button">Senden an</a>
-                    <a  className="teambutton w-button"></a></div>
+                    <a className="teambutton w-button"></a></div>
             </div>
         );
     }
@@ -44,18 +49,21 @@ class WebViewer extends Component {
     participate() {
         console.log("participate()");
         return MessengerExtensions.getUserID()
-            .then(userID =>
-                fetch('/event', {
-                    method: 'post',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    credentials: 'same-origin', // By default, fetch won't send any cookies to the server
-                    body: JSON.stringify({userID: userID})
-                })
+            .then(userID => {
+                    alert(userID);
+                    fetch('/event', {
+                        method: 'post',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        credentials: 'same-origin', // By default, fetch won't send any cookies to the server
+                        body: JSON.stringify({userID: userID})
+                    })
+                }
             )
     }
+
     share() {
         console.log("share()");
         return MessengerExtensions.share();
