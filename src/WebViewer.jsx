@@ -77,7 +77,7 @@ class WebViewer extends Component {
                               style={{backgroundColor: "rgb(255, 51, 0)"}}
                               className="button w-button"
                               data-ix="copy-invite-linkappear">
-                            {this.state.team && this.state.team.length >= 0?"Einladung Annehmen":"Teilnehmen"}
+                            {this.state.team && this.state.team.length > 0?"Einladung Annehmen":"Teilnehmen"}
                             </a>
                         <a
                              data-w-id="9668432f-aa7e-515b-bdca-badd10eec1f1"
@@ -126,6 +126,7 @@ class WebViewer extends Component {
             })
             .then(res => {
                 let {first_name,last_name} = res.userInfo;
+                alert(first_name + " " + last_name)
                 self.setState((prevState, props) => ({
                     team: prevState.team.push(first_name + " " + last_name)
                 }));
