@@ -48,7 +48,7 @@ class WebViewer extends Component {
 
     participate() {
         console.log("participate()");
-        return MessengerExtensions.getUserID(this.postToServer())
+        return MessengerExtensions.getUserID(this.postToServer)
             .then(userID => {
                     alert(userID);
                 }
@@ -67,6 +67,7 @@ class WebViewer extends Component {
     }
 
     postToServer(userID) {
+        alert("postToServer:" + userID);
         return fetch('/event', {
             method: 'post',
             headers: {
