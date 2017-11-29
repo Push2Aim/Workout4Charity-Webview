@@ -1,4 +1,4 @@
-/* Generated on: Tue Nov 28 2017 23:53:38 GMT+0000 (UTC) */
+/* Generated on: Wed Nov 29 2017 20:18:07 GMT+0000 (UTC) */
 /* ==========================================================================
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
    ========================================================================== */
@@ -13,6 +13,10 @@
    Start of custom Webflow CSS
    ========================================================================== */
 @media (max-width: 479px) {
+    .body {
+        background-image: -webkit-linear-gradient(270deg, #f0f0f0, #f0f0f0);
+        background-image: linear-gradient(180deg, #f0f0f0, #f0f0f0);
+    }
     .bottommenu {
         position: fixed;
         left: 0px;
@@ -135,6 +139,13 @@
         font-size: 5em;
         line-height: 1em;
     }
+    .articletitle.teamtitle {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        padding-left: 5vw;
+        color: #0084ff;
+        font-size: 4em;
+    }
     .div-block {
         position: fixed;
     }
@@ -195,7 +206,6 @@
     }
     .articletext_first_letter {
         position: absolute;
-        padding-top: 3px;
         font-family: Vollkorn, serif;
         font-size: 109px;
         line-height: 1em;
@@ -228,9 +238,13 @@
     }
     .ctatext_header {
         margin-top: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 1vh;
         font-size: 32px;
         line-height: 1.5em;
+    }
+    .ctatext_header.laufzieltitle {
+        margin-top: 5vh;
+        margin-bottom: 0vh;
     }
     .ctatext_body {
         font-family: Vollkorn, serif;
@@ -261,10 +275,194 @@
         -ms-flex-align: center;
         align-items: center;
         border-radius: 4px;
-        background-image: -webkit-linear-gradient(270deg, #f30, #f30);
-        background-image: linear-gradient(180deg, #f30, #f30);
-        box-shadow: 0 4px 6px 0 rgba(255, 51, 0, .33);
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .2);
         color: #fff;
         font-size: 16px;
+    }
+    .copy_invite_link {
+        display: none;
+        width: 90vw;
+        height: 12.5vw;
+        margin-top: 5vw;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border: 1px solid #f30;
+        border-radius: 4px;
+        background-image: -webkit-linear-gradient(270deg, #f0f0f0, #f0f0f0);
+        background-image: linear-gradient(180deg, #f0f0f0, #f0f0f0);
+        box-shadow: 0 4px 6px 0 rgba(255, 51, 0, .2);
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        color: #333;
+        font-size: 16px;
+    }
+    .copy_invite_link.team {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        border-style: none;
+        background-image: -webkit-linear-gradient(270deg, #0084ff, #0084ff);
+        background-image: linear-gradient(180deg, #0084ff, #0084ff);
+        box-shadow: 0 4px 6px 0 rgba(0, 132, 255, .33);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        color: #fff;
+    }
+    .copy_invite_link.team.laufziel {
+        margin-top: 3vw;
+        background-image: -webkit-linear-gradient(270deg, #fff, #fff);
+        background-image: linear-gradient(180deg, #fff, #fff);
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .05);
+        color: #333;
+    }
+    .copy_invite_link.team.submitlaufziel {
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .copy_invite_link_clicked {
+        display: none;
+        width: 90vw;
+        height: 12.5vw;
+        margin-top: 5vw;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border: 1px solid #0084ff;
+        border-radius: 4px;
+        background-image: -webkit-linear-gradient(270deg, #0084ff, #0084ff);
+        background-image: linear-gradient(180deg, #0084ff, #0084ff);
+        box-shadow: 0 4px 6px 0 rgba(0, 132, 255, .33);
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        color: #fff;
+        font-size: 16px;
+    }
+    .articlecontainer {
+        display: block;
+    }
+    .articlebutton {
+        display: none;
+        width: 12.5vw;
+        height: 12.5vw;
+        margin-right: 2vw;
+        margin-left: 2vw;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 4px;
+        background-image: url("http://uploads.webflow.com/5a1c4c4dca1ffe00016466a3/5a1eda996df9f2000114c068_Article%20button.png"), -webkit-linear-gradient(270deg, #0084ff, #0084ff);
+        background-image: url("http://uploads.webflow.com/5a1c4c4dca1ffe00016466a3/5a1eda996df9f2000114c068_Article%20button.png"), linear-gradient(180deg, #0084ff, #0084ff);
+        background-position: 50% 50%, 0px 0px;
+        background-size: 20px, auto;
+        background-repeat: no-repeat, repeat;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        color: #fff;
+    }
+    .teamcontainer {
+        display: none;
+        opacity: 1;
+    }
+    .namelist {
+        font-size: 16px;
+        line-height: 1.75em;
+    }
+    .teamtext {
+        width: 100vw;
+        padding: 2vh 5vw;
+    }
+    .heading {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        padding-left: 5vw;
+    }
+    .dropdown {
+        width: 90vw;
+        height: 12.5vw;
+        margin-top: 2vh;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 4px;
+        background-image: -webkit-linear-gradient(270deg, #0084ff, #0084ff);
+        background-image: linear-gradient(180deg, #0084ff, #0084ff);
+        box-shadow: 0 4px 6px 0 rgba(0, 132, 255, .33);
+    }
+    .text-block {
+        font-size: 16px;
+    }
+    .dropdown-toggle {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        height: 12.5vw;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #fff;
+    }
+    .dropdown-list {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .dropdownlink {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-image: -webkit-linear-gradient(270deg, #fff, #fff);
+        background-image: linear-gradient(180deg, #fff, #fff);
     }
 }
