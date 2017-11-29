@@ -75,7 +75,9 @@ class WebViewer extends Component {
                               data-w-id="c8975a9d-bb66-b409-2a11-8b0f02c8062d"
                               style={{backgroundColor: "rgb(255, 51, 0)"}}
                               className="button w-button"
-                              data-ix="copy-invite-linkappear">Teilnehmen</a>
+                              data-ix="copy-invite-linkappear">
+                            {this.state.team && this.state.team.length >= 0?"Einladung Annehmen":"Teilnehmen"}
+                            </a>
                         <a
                              data-w-id="9668432f-aa7e-515b-bdca-badd10eec1f1"
                             className="copy_invite_link w-button" data-ix="copy-invite-linkappear-2"
