@@ -45,7 +45,7 @@ class WebViewer extends Component {
         console.log("participate()");
         return MessengerExtensions.getUserID()
             .then(userID =>
-                fetch('https://workout4charity.herokuapp.com/event', {
+                fetch('/event', {
                     method: 'post',
                     headers: {
                         'Accept': 'application/json',

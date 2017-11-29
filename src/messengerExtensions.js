@@ -52,14 +52,14 @@ function share(message) {
                     "image_url": "https://millenniumchild.org/wp-content/uploads/2016/08/p.jpg",
                     "default_action": {
                         "type": "web_url",
-                        "url": "https://push2aim.github.io/Workout4Charity-Webview/",
+                        "url": "https://workout4charity.herokuapp.com/",
                         "webview_share_button": "hide",
                         "webview_height_ratio": "full",
                         "messenger_extensions": true,
                     },
                     "buttons": [{
                         "type": "web_url",
-                        "url": "https://push2aim.github.io/Workout4Charity-Webview/",
+                        "url": "https://workout4charity.herokuapp.com/",
                         "title": "Mehr Lesen",
                         "webview_share_button": "hide",
                         "webview_height_ratio": "full",
