@@ -126,7 +126,7 @@ class WebViewer extends Component {
             })
             .then(res => {
                 let {first_name,last_name} = res.userInfo;
-                alert(first_name + " " + last_name)
+                alert("res:"+ JSON.stringify(res))
                 self.setState((prevState, props) => ({
                     team: prevState.team.push(first_name + " " + last_name)
                 }));
