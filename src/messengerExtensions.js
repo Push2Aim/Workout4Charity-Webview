@@ -5,6 +5,7 @@ module.exports = {
     getUserID: getUserID,
     share: share,
     close: close,
+    askPermission: askPermission,
 };
 doneLoading();
 function doneLoading() {
@@ -98,7 +99,6 @@ function askPermission(permission) {
                 if (isGranted) {
                     // User has granted user_profile permission
                 }
-
             }, function(errorCode, errorMessage) {
                 // Error occurred
             },
