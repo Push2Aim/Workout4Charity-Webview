@@ -86,3 +86,24 @@ function close() {
             () => "Close successful",
             err => new Error(err)));
 }
+
+function askPermission(permission) {
+    return doneLoading().then(extension =>{
+        extension.askPermission(
+            function(permission_response) {
+                // Person grants or rejects the asked permission.
+                let permissions = permission_response.permissions; // list of all permissions granted
+                let isGranted = permission_response.isGranted;
+
+                if (isGranted) {
+                    // User has granted user_profile permission
+                }
+
+            }, function(errorCode, errorMessage) {
+                // Error occurred
+            },
+            permission||"user_profile"
+        );
+    })
+}
+
