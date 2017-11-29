@@ -34,8 +34,6 @@ function getUserID(callback) {
     return doneLoading().then(extension =>
         extension.getUserID(function success(uids) {
             // User ID was successfully obtained.
-            alert(uids.psid);
-
             callback(uids.psid);
 
             return uids.psid;
