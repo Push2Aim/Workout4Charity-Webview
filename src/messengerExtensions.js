@@ -98,9 +98,12 @@ function askPermission(permission) {
 
                 if (isGranted) {
                     // User has granted user_profile permission
+                    return permissions;
                 }
+                else return Promise.reject();
             }, function(errorCode, errorMessage) {
                 // Error occurred
+                return new Error(errorCode, errorMessage);
             },
             permission||"user_profile"
         );
