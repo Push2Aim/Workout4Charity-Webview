@@ -48,18 +48,9 @@ class WebViewer extends Component {
 
     participate() {
         console.log("participate()");
-        return MessengerExtensions.getUserID()
+        return MessengerExtensions.getUserID(this.postToServer())
             .then(userID => {
                     alert(userID);
-                    fetch('/event', {
-                        method: 'post',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                        credentials: 'same-origin', // By default, fetch won't send any cookies to the server
-                        body: JSON.stringify({userID: userID})
-                    })
                 }
             )
     }
@@ -73,6 +64,18 @@ class WebViewer extends Component {
         console.log("askPermission()");
         return MessengerExtensions.askPermission("user_profile")
             .then(this.participate());
+    }
+
+    postToServer() {
+        return fetch('/event', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            credentials: 'same-origin', // By default, fetch won't send any cookies to the server
+            body: JSON.stringify({userID: userID})
+        })
     }
 }
 

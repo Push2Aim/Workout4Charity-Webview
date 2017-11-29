@@ -30,11 +30,14 @@ function getFeatures() {
             err => new Error(err)));
 }
 
-function getUserID() {
+function getUserID(callback) {
     return doneLoading().then(extension =>
         extension.getUserID(function success(uids) {
             // User ID was successfully obtained.
             alert(uids.psid);
+
+            callback;
+
             return uids.psid;
         }, (err, errorMessage) => {
             // Error handling code
