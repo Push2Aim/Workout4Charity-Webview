@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./webflow.css";
 import MessengerExtensions from "./messengerExtensions";
 import {CopyToClipboard} from "react-copy-to-clipboard";
+import request from "request";
 
 class WebViewer extends Component {
 
@@ -16,6 +17,9 @@ class WebViewer extends Component {
     render() {
         return (
             <div>
+                <div onClick={this.post.bind(this)}>POST</div>
+                <div onClick={this.postL.bind(this)}>POST_L</div>
+                <div onClick={this.postRequest.bind(this)}>POST_Request</div>
                 <div className="teamcontainer w-container"><h1 className="articletitle teamtitle">Team Profil</h1>
                     <div className="teamtext"><h2 className="ctatext_header">Dein Team</h2>
                         <ul className="namelist">
@@ -132,6 +136,83 @@ class WebViewer extends Component {
                 }));
             })
 
+    }
+    post() {
+        const self = this;
+        return fetch('https://workout4charity.herokuapp.com/event', {
+            method: 'post',
+            body: JSON.stringify({userID: 1379308248862878})
+            })
+            .then(res => {
+                let {first_name,last_name} = res.userInfo;
+                alert("res:"+ JSON.stringify(res))
+                self.setState((prevState, props) => ({
+                    team: prevState.team.push(first_name + " " + last_name)
+                }));
+            })
+
+    }
+    postL() {
+        const self = this;
+        return fetch('http://localhost:5000/event', {
+            method: 'post',
+            body: JSON.stringify({userID: 1379308248862878})
+            })
+            .then(res => {
+                let {first_name,last_name} = res.userInfo;
+                alert("res:"+ JSON.stringify(res))
+                self.setState((prevState, props) => ({
+                    team: prevState.team.push(first_name + " " + last_name)
+                }));
+            })
+
+    }
+
+    postRequest() {
+        return new Promise((resolve, reject) => {
+            // request({
+            //         method: 'POST',
+            //         uri: "https://workout4charity.herokuapp.com/event",
+            //         json: {userID: 1379308248862878},
+            //         body: {userID: 1379308248862878},
+            //     },
+            //     function (error, response) {
+            //         if (error) {
+            //             console.error('Error while userInfoRequest: ', error);
+            //             reject(error);
+            //         } else {
+            //             console.log('userInfoRequest result: ', response.body);
+            //             let userInfo = JSON.parse(response.body);
+            //             resolve(userInfo);
+            //         }
+            //     });
+            // request.post(
+            //     '/event',
+            //     { json: {userID: 1379308248862878}},
+            //     function (error, response, body) {
+            //         if (error) {
+            //             console.error('Error while userInfoRequest: ', error);
+            //             reject(error);
+            //         } else {
+            //             console.log('userInfoRequest result: ', response.body);
+            //             let userInfo = JSON.parse(response.body);
+            //             alert(userInfo)
+            //             alert(body)
+            //             resolve(userInfo);
+            //         }
+            //     }
+            // );
+
+            request({
+                url: "https://workout4charity.herokuapp.com/event",
+                method: "POST",
+                json: true,   // <--Very important!!!
+                body: {userID: 1379308248862878}
+            }, function (error, response, body){
+                alert(JSON.stringify(response))
+                console.log(response);
+            });
+        });
     }
 
     buildList(name) {

@@ -2,11 +2,12 @@
   "name": "workout4charity-webview",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://push2aim.github.io/",
+  "homepage": "https://push2aim.github.io/Workout4Charity-Webview/",
   "dependencies": {
     "react": "^15.6.2",
     "react-copy-to-clipboard": "^5.0.1",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0",
