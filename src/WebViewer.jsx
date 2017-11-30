@@ -5,6 +5,7 @@ import {CopyToClipboard} from "react-copy-to-clipboard";
 import request from "request";
 
 class WebViewer extends Component {
+    PAGE_ACCESS_TOKEN = "EAAB77aN8QOUBACD3DUlgyUQ8oLNkexhXZCggJrho3sRckDnZAWsCowOIm13lfFZB1UZCPL1nbh3kpCz6vn47qRSAxBmmZBK6NutjRmGEoILtFZAoC01uC1fZB3eGsvYYj3MEYVnBJZBSIkJDSu4SYDGxMcsUgSWV8tPk0cmeambdta3VbcWGPKaj";
 
     constructor(props, context) {
         super(props, context);
@@ -17,9 +18,6 @@ class WebViewer extends Component {
     render() {
         return (
             <div>
-                <div onClick={this.post.bind(this)}>POST</div>
-                <div onClick={this.postL.bind(this)}>POST_L</div>
-                <div onClick={this.postRequest.bind(this)}>POST_Request</div>
                 <div className="teamcontainer w-container"><h1 className="articletitle teamtitle">Team Profil</h1>
                     <div className="teamtext"><h2 className="ctatext_header">Dein Team</h2>
                         <ul className="namelist">
@@ -103,7 +101,7 @@ class WebViewer extends Component {
 
     participate() {
         console.log("participate()");
-        return MessengerExtensions.getUserID(this.postToServer)
+        return MessengerExtensions.getUserID(this.userInfoRequest)
     }
 
     share() {
@@ -117,9 +115,35 @@ class WebViewer extends Component {
             .then(this.participate());
     }
 
+    userInfoRequest(userId) {
+        alert("userInfoRequest("+userId+")")
+        return new Promise((resolve, reject) => {
+            request({
+                    method: 'GET',
+                    uri: "https://graph.facebook.com/v2.6/" + userId + "?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=" + this.PAGE_ACCESS_TOKEN
+                },
+                function (error, response) {
+                    if (error) {
+                        console.error('Error while userInfoRequest: ', error);
+                        alert(JSON.stringify(error))
+                        reject(error);
+                    } else {
+                        console.log('userInfoRequest result: ', response.body);
+                        let userInfo = JSON.parse(response.body);
+                        alert(response.body);
+                        resolve(userInfo);
+                    }
+                });
+        })
+            .then(userInfo =>{
+                    alert(userInfo.first_name + " " + userInfo.last_name)
+                }
+            )
+    }
+
     postToServer(userID) {
         const self = this;
-        return fetch('/event', {
+        fetch('/event', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
@@ -129,7 +153,7 @@ class WebViewer extends Component {
             body: JSON.stringify({userID: userID})
             })
             .then(res => {
-                let {first_name,last_name} = res.userInfo;
+                let {first_name,last_name} = res.body.userInfo;
                 alert("res:"+ JSON.stringify(res))
                 self.setState((prevState, props) => ({
                     team: prevState.team.push(first_name + " " + last_name)
