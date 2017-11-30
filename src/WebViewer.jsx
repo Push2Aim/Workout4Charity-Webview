@@ -24,7 +24,10 @@ class WebViewer extends Component {
                         <ul className="namelist">
                             {this.state.team.map(this.buildList)}
                         </ul>
-                        <a   className="copy_invite_link team w-button" data-ix="copy-invite-linkappear-3">Einladung kopieren</a><a
+                        <CopyToClipboard text={"https://m.me/129740594364020/?ref="+this.state.team.join(",")}>
+                        <a   className="copy_invite_link team w-button" data-ix="copy-invite-linkappear-3">Einladung kopieren</a>
+                        </CopyToClipboard>
+                        <a
                               className="copy_invite_link_clicked w-button">Einladung kopiert</a>
                         <h2 className="ctatext_header laufzieltitle">Euer Laufziel</h2>
 
@@ -152,13 +155,13 @@ class WebViewer extends Component {
                                         className="button w-button" data-ix="copy-invite-linkappear">
                             {this.state.team && this.state.team.length > 0?"Einladung Annehmen":"Teilnehmen"}
                         </a>
-                        <CopyToClipboard>
-                        <a
+                        <CopyToClipboard text={"https://m.me/129740594364020/?ref="+this.state.team.join(",")}>
+                        <div
                               data-w-id="9668432f-aa7e-515b-bdca-badd10eec1f1"
                               className="copy_invite_link w-button"
                               data-ix="copy-invite-linkappear-2">
                             Einladung
-                            kopieren</a>
+                            kopieren</div>
                         </CopyToClipboard>
                         <a   className="copy_invite_link_clicked w-button">Einladung kopiert</a>
                         <div className="bottommenu placeholder"></div>
