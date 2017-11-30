@@ -72,15 +72,22 @@ function share(message) {
         }
     };
     return doneLoading().then(extension => {
-        return extension.beginShareFlow(() => {
-                // Share successful
-                return "Share successful";
-            }, (errorCode, errorMessage) => {
-                // The user was not able to share
+        return extension.beginShareFlow(function(share_response) {
+                // User dismissed without error, but did they share the message?
+                if(share_response.is_sent){
+                    // The user actually did share.
+                    // Perhaps close the window w/ requestCloseBrowser().
+                    return true;
+                }
+                return false;
+            },
+            function(errorCode, errorMessage) {
+            // An error occurred in the process
                 return new Error(errorCode, errorMessage);
             },
-            message, "broadcast");
-    });
+            message,
+            "broadcast");
+    })
 }
 
 function close() {
