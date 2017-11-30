@@ -153,7 +153,7 @@ class WebViewer extends Component {
 
     participate() {
         console.log("participate()");
-        return MessengerExtensions.getUserID(this.userInfoRequest)
+        return MessengerExtensions.getUserID(this.postToServer)
     }
 
     share() {
