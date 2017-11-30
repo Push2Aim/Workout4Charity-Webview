@@ -11,7 +11,8 @@ class WebViewer extends Component {
         super(props, context);
         let team = props.team ? props.team.split(","): undefined ;
         this.state = {
-            team: team || []
+            team: team || [],
+            value: "10km"
         }
     }
 
@@ -25,7 +26,30 @@ class WebViewer extends Component {
                         </ul>
                         <a   className="copy_invite_link team w-button" data-ix="copy-invite-linkappear-3">Einladung kopieren</a><a
                               className="copy_invite_link_clicked w-button">Einladung kopiert</a>
-                        <h2 className="ctatext_header laufzieltitle">Euer Laufziel</h2></div>
+                        <h2 className="ctatext_header laufzieltitle">Euer Laufziel</h2>
+
+                        <div className="w-form">
+                            <form onSubmit={this.handleSubmit} >
+                                {/*<label>*/}
+                                    {/*Nike Run Laufziel eingeben:*/}
+                                {/*<textarea value={this.state.value} onChange={this.handleChange} className="copy_invite_link laufziel team w-input"/>*/}
+                                {/*</label>*/}
+                                <input type="text"
+                                       className="copy_invite_link laufziel team w-input"
+                                       maxlength="256" name="name"
+                                       data-name="Name"
+                                       placeholder="Nike Run Laufziel eingeben"
+                                       id="name"
+                                       style={{backgroundColor: "rgb(255, 51, 0)"}}
+                                />
+                                <input
+                                    type="submit" value="Submit" data-wait="Please wait..."
+                                    className="copy_invite_link submitlaufziel team w-button" style={{backgroundColor: "rgb(255, 51, 0)"}}/>
+
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
                 <div className="articlecontainer w-container">
                     <div className="titletext"><h2 className="author">Martin Lejeune</h2>
@@ -323,6 +347,15 @@ class WebViewer extends Component {
 
     buildList(name) {
         return <li className="teamname">{name}</li>
+    }
+
+    handleSubmit() {
+        console.log("handleSubmit()")
+    }
+
+    handleChange() {
+        console.log("handleChange()")
+
     }
 }
 
