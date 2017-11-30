@@ -1,4 +1,4 @@
-/* Generated on: Wed Nov 29 2017 23:03:01 GMT+0000 (UTC) */
+/* Generated on: Thu Nov 30 2017 14:38:49 GMT+0000 (UTC) */
 /* ==========================================================================
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
    ========================================================================== */
@@ -98,8 +98,8 @@
     .titleimage {
         width: 100vw;
         height: 95vh;
-        background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url("http://uploads.webflow.com/5a1c4c4dca1ffe00016466a3/5a1d26725c97d3000174ceb1_chaotische%20rettung%202.jpg");
-        background-image: linear-gradient(180deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url("http://uploads.webflow.com/5a1c4c4dca1ffe00016466a3/5a1d26725c97d3000174ceb1_chaotische%20rettung%202.jpg");
+        background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url("http://uploads.webflow.com/5a1c4c4dca1ffe00016466a3/5a20162aab6ac100013d7383_Gaza.jpg");
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url("http://uploads.webflow.com/5a1c4c4dca1ffe00016466a3/5a20162aab6ac100013d7383_Gaza.jpg");
         background-position: 0px 0px, 50% 0px;
         background-size: auto, cover;
         background-repeat: repeat, no-repeat;
@@ -109,7 +109,7 @@
     .articletitle {
         margin-top: 0px;
         color: #fff;
-        font-size: 5em;
+        font-size: 4em;
         line-height: 1em;
     }
     .articletitle.teamtitle {
@@ -178,7 +178,7 @@
         position: static;
         width: 100vw;
         height: 33vh;
-        background-image: url("http://uploads.webflow.com/5a1c4c4dca1ffe00016466a3/5a1c7436b5d43a0001425201_African%20children%20hope.jpg");
+        background-image: url("http://uploads.webflow.com/5a1c4c4dca1ffe00016466a3/5a2016bd4ee3d200016a1b3f_Gaza%20Hoffnung.jpg");
         background-position: 50% 50%;
         background-size: cover;
     }
@@ -189,8 +189,11 @@
         line-height: 1.5em;
     }
     .ctatext_header.laufzieltitle {
-        margin-top: 5vh;
+        margin-top: 10vh;
         margin-bottom: 0vh;
+    }
+    .ctatext_header.blue {
+        color: #0084ff;
     }
     .ctatext_body {
         font-family: Vollkorn, serif;
@@ -254,14 +257,15 @@
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        border-style: none;
-        background-image: -webkit-linear-gradient(270deg, #0084ff, #0084ff);
-        background-image: linear-gradient(180deg, #0084ff, #0084ff);
-        box-shadow: 0 4px 6px 0 rgba(0, 132, 255, .33);
+        border-style: solid;
+        border-color: #0084ff;
+        background-image: -webkit-linear-gradient(270deg, #f0f0f0, #f0f0f0);
+        background-image: linear-gradient(180deg, #f0f0f0, #f0f0f0);
+        box-shadow: 0 4px 6px 0 rgba(0, 132, 255, .1);
         -webkit-transform: scale(1);
         -ms-transform: scale(1);
         transform: scale(1);
-        color: #fff;
+        color: #0084ff;
     }
     .copy_invite_link.team.laufziel {
         margin-top: 3vw;
