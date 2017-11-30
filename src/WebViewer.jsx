@@ -158,7 +158,34 @@ class WebViewer extends Component {
 
     share() {
         console.log("share()");
-        return MessengerExtensions.share();
+        return MessengerExtensions.share({
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [{
+                        "title": "Du kannst helfen ohne Geld auszugeben",
+                        "subtitle":"Ein Brief aus dem Gazastreifen - Hoffnung.",
+                        "image_url": "https://github.com/Push2Aim/Workout4Charity-ChatBot/blob/master/public/Gaza%20Hoffnung.jpg?raw=true",
+                        "default_action": {
+                            "type": "web_url",
+                            "url": "https://workout4charity.herokuapp.com/?ref="+this.state.team.join(","),
+                            "webview_share_button": "hide",
+                            "webview_height_ratio": "full",
+                            "messenger_extensions": true,
+                        },
+                        "buttons": [{
+                            "type": "web_url",
+                            "url": "https://workout4charity.herokuapp.com/?ref="+this.state.team.join(","),
+                            "title": "Mehr Lesen",
+                            "webview_share_button": "hide",
+                            "webview_height_ratio": "full",
+                            "messenger_extensions": true,
+                        }]
+                    }]
+                }
+            }}
+    );
     }
 
     askPermission() {
