@@ -238,7 +238,7 @@ class WebViewer extends Component {
                 let {first_name,last_name} = res.body.userInfo;
                 alert("res:"+ JSON.stringify(res))
                 self.setState((prevState, props) => ({
-                    team: prevState.team.push(first_name + " " + last_name)
+                    team:[...prevState.team,first_name + " " + last_name]
                 }));
             })
 
@@ -253,7 +253,7 @@ class WebViewer extends Component {
                 let {first_name,last_name} = res.userInfo;
                 alert("res:"+ JSON.stringify(res))
                 self.setState((prevState, props) => ({
-                    team: prevState.team.push(first_name + " " + last_name)
+                    team:[...prevState.team,first_name + " " + last_name]
                 }));
             })
 
