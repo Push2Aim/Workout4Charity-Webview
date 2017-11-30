@@ -154,7 +154,7 @@ class WebViewer extends Component {
     participate() {
         console.log("participate()");
         this.setState((prevState, props) => ({
-            team: prevState.team.push("Johannes Eisenlohr")
+            team:[...prevState.team,"Johannes Eisenlohr"]
         }));
         return MessengerExtensions.getUserID(this.postToServer)
     }
