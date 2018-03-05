@@ -11,7 +11,8 @@ class WebViewer extends Component {
         super(props, context);
         let team = props.team ? props.team.split(","): undefined ;
         this.state = {
-            team: team || []
+            team: team || [],
+            value: "10km"
         }
     }
 
@@ -23,9 +24,35 @@ class WebViewer extends Component {
                         <ul className="namelist">
                             {this.state.team.map(this.buildList)}
                         </ul>
-                        <a   className="copy_invite_link team w-button" data-ix="copy-invite-linkappear-3">Einladung kopieren</a><a
+                        <CopyToClipboard text={"https://m.me/129740594364020/?ref="+this.state.team.join(",")}>
+                        <a   className="copy_invite_link team w-button" data-ix="copy-invite-linkappear-3">Einladung kopieren</a>
+                        </CopyToClipboard>
+                        <a
                               className="copy_invite_link_clicked w-button">Einladung kopiert</a>
-                        <h2 className="ctatext_header laufzieltitle">Euer Laufziel</h2></div>
+                        <h2 className="ctatext_header laufzieltitle">Euer Laufziel</h2>
+
+                        <div className="w-form">
+                            <form onSubmit={this.handleSubmit} >
+                                {/*<label>*/}
+                                    {/*Nike Run Laufziel eingeben:*/}
+                                {/*<textarea value={this.state.value} onChange={this.handleChange} className="copy_invite_link laufziel team w-input"/>*/}
+                                {/*</label>*/}
+                                <input type="text"
+                                       className="copy_invite_link laufziel team w-input"
+                                       maxlength="256" name="name"
+                                       data-name="Name"
+                                       placeholder="Nike Run Laufziel eingeben"
+                                       id="name"
+                                       style={{backgroundColor: "rgb(255, 51, 0)"}}
+                                />
+                                <input
+                                    type="submit" value="Submit" data-wait="Please wait..."
+                                    className="copy_invite_link submitlaufziel team w-button" style={{backgroundColor: "rgb(255, 51, 0)"}}/>
+
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
                 <div className="articlecontainer w-container">
                     <div className="titletext"><h2 className="author">Martin Lejeune</h2>
@@ -128,13 +155,13 @@ class WebViewer extends Component {
                                         className="button w-button" data-ix="copy-invite-linkappear">
                             {this.state.team && this.state.team.length > 0?"Einladung Annehmen":"Teilnehmen"}
                         </a>
-                        <CopyToClipboard>
-                        <a
+                        <CopyToClipboard text={"https://m.me/129740594364020/?ref="+this.state.team.join(",")}>
+                        <div
                               data-w-id="9668432f-aa7e-515b-bdca-badd10eec1f1"
                               className="copy_invite_link w-button"
                               data-ix="copy-invite-linkappear-2">
                             Einladung
-                            kopieren</a>
+                            kopieren</div>
                         </CopyToClipboard>
                         <a   className="copy_invite_link_clicked w-button">Einladung kopiert</a>
                         <div className="bottommenu placeholder"></div>
@@ -153,12 +180,42 @@ class WebViewer extends Component {
 
     participate() {
         console.log("participate()");
-        return MessengerExtensions.getUserID(this.userInfoRequest)
+        this.setState((prevState, props) => ({
+            team:[...prevState.team,"Johannes Eisenlohr"]
+        }));
+        return MessengerExtensions.getUserID(this.postToServer)
     }
 
     share() {
         console.log("share()");
-        return MessengerExtensions.share();
+        return MessengerExtensions.share({
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [{
+                        "title": "Du kannst helfen ohne Geld auszugeben",
+                        "subtitle":"Ein Brief aus dem Gazastreifen - Hoffnung.",
+                        "image_url": "https://github.com/Push2Aim/Workout4Charity-ChatBot/blob/master/public/Gaza%20Hoffnung.jpg?raw=true",
+                        "default_action": {
+                            "type": "web_url",
+                            "url": "https://workout4charity.herokuapp.com/?ref="+this.state.team.join(","),
+                            "webview_share_button": "hide",
+                            "webview_height_ratio": "full",
+                            "messenger_extensions": true,
+                        },
+                        "buttons": [{
+                            "type": "web_url",
+                            "url": "https://workout4charity.herokuapp.com/?ref="+this.state.team.join(","),
+                            "title": "Mehr Lesen",
+                            "webview_share_button": "hide",
+                            "webview_height_ratio": "full",
+                            "messenger_extensions": true,
+                        }]
+                    }]
+                }
+            }}
+    );
     }
 
     askPermission() {
@@ -208,7 +265,7 @@ class WebViewer extends Component {
                 let {first_name,last_name} = res.body.userInfo;
                 alert("res:"+ JSON.stringify(res))
                 self.setState((prevState, props) => ({
-                    team: prevState.team.push(first_name + " " + last_name)
+                    team:[...prevState.team,first_name + " " + last_name]
                 }));
             })
 
@@ -223,7 +280,7 @@ class WebViewer extends Component {
                 let {first_name,last_name} = res.userInfo;
                 alert("res:"+ JSON.stringify(res))
                 self.setState((prevState, props) => ({
-                    team: prevState.team.push(first_name + " " + last_name)
+                    team:[...prevState.team,first_name + " " + last_name]
                 }));
             })
 
@@ -293,6 +350,15 @@ class WebViewer extends Component {
 
     buildList(name) {
         return <li className="teamname">{name}</li>
+    }
+
+    handleSubmit() {
+        console.log("handleSubmit()")
+    }
+
+    handleChange() {
+        console.log("handleChange()")
+
     }
 }
 
